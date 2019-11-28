@@ -4,6 +4,7 @@ const dotenv = require("dotenv");
 const mongoose = require("mongoose");
 //Import Routes
 const authRoutes = require("./routes/auth");
+const favoritesRoutes = require("./routes/favorites");
 
 dotenv.config();
 
@@ -19,5 +20,6 @@ app.use(express.json());
 
 //Routes Middlewers
 app.use("/api/user", authRoutes);
+app.use("/api/favorites", favoritesRoutes);
 
 app.listen(3000, () => console.log("Server wenu running on port 3000"));
